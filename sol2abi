@@ -4,9 +4,9 @@ var fs = require('fs')
 var solc = require('solc')
 var template = require('./template.js')
 
-var sol1 = fs.readFileSync('./examples/voting/contracts/voting.sol').toString()
+var sol1 = fs.readFileSync('./examples/voting/sc/contracts/Voting.sol').toString()
 var input = {
-	'ballot.sol':sol1,
+	'voting.sol':sol1,
 }
 
 var output = solc.compile({ sources: input }, 1)
@@ -20,5 +20,5 @@ for (var contractName in output.contracts){
           contractName.split(":")[1],
           output.contracts[contractName].bytecode
     )
-    fs.writeFileSync('./examples/voting/contracts/'+fileName,JSON.stringify(tmp,null,4))
+    fs.writeFileSync('./examples/voting/'+fileName,JSON.stringify(tmp,null,4))
 }

@@ -4,4 +4,6 @@
 
 ./abi2swagger
 
-cd examples/voting/server; npm start && open http://localhost:8545/docs
+cd examples/voting/server
+npm start
+open http://localhost:8545/docs
