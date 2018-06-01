@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+contract_input=$1 #'./examples/voting/sc/contracts/Voting.sol'
+contract_output=$2 #'./examples/voting/'
+codegen_input=$3 #'./examples/voting/Voting.json'
+codegen_output=$4 #'./examples/voting/server'
+
+node index.js $contract_input $contract_output
+
+swagger-codegen generate -i $codegen_input  -l nodejs-server -o $codegen_output
+
+cd $codegen_output
+npm start
+open http://localhost:8545/docs

@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-swagger-codegen generate -i ./examples/voting/Voting.json  -l nodejs-server -o ./examples/voting/server

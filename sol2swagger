@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-./sol2abi
-
-./abi2swagger
-
-cd examples/voting/server
-npm start
-open http://localhost:8545/docs
