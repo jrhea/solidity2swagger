@@ -7,8 +7,12 @@ codegen_output=$4 #'./examples/voting/server'
 
 node index.js $contract_input $contract_output
 
-swagger-codegen generate -i $codegen_input  -l nodejs-server -o $codegen_output
+if command -v swagger-codegens >/dev/null 2>&1; then
+  echo "swagger-codegen is not installed. code will not be generated.";
+else
+  swagger-codegen generate -i $codegen_input  -l nodejs-server -o $codegen_output
 
-cd $codegen_output
-npm start
-open http://localhost:8545/docs
+  cd $codegen_output
+  npm start
+  open http://localhost:8545/docs
+fi
