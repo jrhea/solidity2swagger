@@ -48,6 +48,6 @@ Just run the setup.sh script
 
 ```
 
-<img src=./images/swagger-doc />
+<img src=./images/swagger-doc.png />
 
 
